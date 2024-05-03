@@ -78,7 +78,7 @@ WSGI_APPLICATION = 'testproject.wsgi.application'
 # https://docs.djangoproject.com/en/5.0/ref/settings/#databases
 
 DATABASES = {
-    "default": dj_database_url.parse(os.environ.get("DATABASE_URL"))
+    "default": dj_database_url.parse("postgres://root:akRKL1lj15Nh09Pj0dQx2bjrgRImquv6@dpg-coq2u1djm4es73aecqe0-a.frankfurt-postgres.render.com/testdatabase_fvip")
 }
 
 TEMPLATES = [

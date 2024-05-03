@@ -17,8 +17,9 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path
 from django.contrib.staticfiles.urls import staticfiles_urlpatterns
-
+import testapp.views as views
 urlpatterns = [
     path('admin/', admin.site.urls),
+    path('see/', views.see_tables),
 ]
 urlpatterns += staticfiles_urlpatterns()
