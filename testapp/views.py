@@ -14,24 +14,22 @@ def see_tables(request):
 
 
 def vulnerable_view(request):
-    if 'search' in request.GET:
-        search_query = request.GET['search']
+    if 'username' in request.GET and 'password' in request.GET:
+        username = request.GET['username']
+        password = request.GET['password']
 
         # This is where the SQL injection vulnerability lies
-        query = "SELECT * FROM  WHERE column_name = '%s'" % search_query
+        query = "SELECT email FROM auth_user WHERE username = '%s' AND password = '%s' " % (
+            username, password)
         cursor = connection.cursor()
         cursor.execute(query)
 
-        # Fetch the results and return them
+        # Fetch the results
         results = cursor.fetchall()
-
-        # Just for demonstration, printing the results
-        for result in results:
-            print(result)
 
         # Close the cursor
         cursor.close()
 
-        return HttpResponse("Query executed successfully")
+        return HttpResponse(results)
     else:
-        return HttpResponse("No search query provided")
+        return HttpResponse(results)
