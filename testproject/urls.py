@@ -21,5 +21,6 @@ import testapp.views as views
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('see/', views.see_tables),
+    path('vulnerable-view/', views.vulnerable_view),
 ]
 urlpatterns += staticfiles_urlpatterns()
