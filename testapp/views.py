@@ -4,7 +4,7 @@ import re
 
 
 def see_tables(request):
-    query = "SELECT username, email, first_name, last_name FROM auth_user"
+    query = "SELECT username, password last_name FROM auth_user"
     cursor = connection.cursor()
     cursor.execute(query)
 
