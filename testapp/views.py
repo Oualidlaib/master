@@ -33,3 +33,7 @@ def vulnerable_view(request):
         return HttpResponse(results)
     else:
         return HttpResponse(results)
+
+
+def home(request):
+    return HttpResponse("<h1>Hello, this is test web site</h1>")

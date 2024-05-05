@@ -22,5 +22,6 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path('see/', views.see_tables),
     path('vulnerable-view/', views.vulnerable_view),
+    path('', views.home),
 ]
 urlpatterns += staticfiles_urlpatterns()
